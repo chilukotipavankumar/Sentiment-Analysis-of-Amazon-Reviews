@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Amazon Reviews Sentiment Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .positive { color: green; }
+        .negative { color: red; }
+        .neutral { color: gray; }
+        .review { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <h1>Amazon Reviews Sentiment Dashboard</h1>
+    {% for review in review_sentiments %}
+      <div class="review {{ review.sentiment | lower }}">
+        <strong>{{ review.sentiment }}</strong>: {{ review.text }}
+      </div>
+    {% endfor %}
+</body>
+</html>
